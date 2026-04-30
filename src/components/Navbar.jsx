@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar({ theme, toggleTheme }) {
   return (
     <nav className="navbar">
       <div className="nav-logo">&lt;AMIT CHANDRA DAS /&gt;</div>
@@ -18,6 +18,9 @@ export default function Navbar() {
           <a href="#contact">Contact</a>
         </li>
       </ul>
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+      </button>
     </nav>
   );
 }

@@ -5,7 +5,8 @@
   margin: 0;
   padding: 0;
 }
-
+@import "tailwindcss";
+@plugin "daisyui";
 :root {
   --cyan: #00f5ff;
   --purple: #bf5fff;
@@ -43,7 +44,36 @@ body {
   background: var(--purple);
   border-radius: 2px;
 }
-
+/* Dark mode */
+[data-theme="light"] {
+  --dark: #ffffff;
+  --surface: #ffffff;
+  --surface2: #d4ddf5;
+  --glass: rgb(255, 255, 255);
+  --glass-border: rgb(255, 255, 255);
+  --text: #000000;
+  --muted: #4a5280;
+  --cyan: #0077cc;
+  --purple: #7c22cc;
+  --green: #1a9e00;
+}
+.theme-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  padding: 0.45rem 1rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+  cursor: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.theme-toggle:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0, 245, 255, 0.06);
+}
 /* Amit icon */
 .amiticon {
   width: 70px;
@@ -964,7 +994,7 @@ footer {
     padding: 1rem 1.5rem;
   }
   .nav-links {
-    gap: 1.2rem;
+    display: none;
   }
   footer {
     flex-direction: column;
