@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_ilqj5v9";
+const EMAILJS_TEMPLATE_ID = "template_xa0g4oq";
+const EMAILJS_PUBLIC_KEY = "NBW6pcRoNIiXUDqtU";
 
 const socials = [
   {
     icon: "💼",
     name: "LinkedIn",
-    handle: "https://www.linkedin.com/in/amitchandradas2004/",
+    handle: "linkedin.com/in/amitchandradas2004",
     href: "https://www.linkedin.com/in/amitchandradas2004/",
   },
   {
     icon: "🐙",
     name: "GitHub",
-    handle: "https://github.com/amitchandradas2004",
+    handle: "github.com/amitchandradas2004",
     href: "https://github.com/amitchandradas2004",
   },
-  // { icon: "🐦", name: "Twitter / X", handle: "@yourhandle", href: "#" },
   {
     icon: "✉️",
     name: "Email",
@@ -24,21 +28,52 @@ const socials = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("idle");
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    setStatus("sending");
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      });
   };
+
+  const buttonLabel =
+    status === "sending"
+      ? "Sending..."
+      : status === "success"
+        ? "✓ Message Sent!"
+        : status === "error"
+          ? "✗ Failed — Try Again"
+          : "Send Message →";
 
   return (
     <section id="contact" style={{ position: "relative", zIndex: 1 }}>
       <div className="section-wrapper">
-        <div className="section-label">// let's connect</div>
+        <div className="section-label">// lets connect</div>
         <h2 className="section-title">
           Get In <span className="grad-text">Touch</span>
         </h2>
@@ -56,6 +91,7 @@ export default function Contact() {
                 required
               />
             </div>
+
             <div className="form-group">
               <label className="form-label">Email Address</label>
               <input
@@ -68,6 +104,7 @@ export default function Contact() {
                 required
               />
             </div>
+
             <div className="form-group">
               <label className="form-label">Message</label>
               <textarea
@@ -80,12 +117,14 @@ export default function Contact() {
                 required
               />
             </div>
+
             <button
               type="submit"
               className="btn-primary"
               style={{ alignSelf: "flex-start" }}
+              disabled={status === "sending"}
             >
-              {sent ? "✓ Message Sent!" : "Send Message →"}
+              {buttonLabel}
             </button>
           </form>
 
@@ -98,15 +137,16 @@ export default function Contact() {
                 marginBottom: "1.5rem",
               }}
             >
-              I'm always happy to chat — whether it's about a potential job, a
-              project idea, a collab, or just saying hello. My inbox is open! 🙌
+              I am always happy to chat — whether it is about a potential job, a
+              project idea, a collab, or just saying hello. My inbox is open!
             </p>
+
             <div className="social-links">
               {socials.map((s, i) => (
                 <a
+                  key={i}
                   href={s.href}
                   className="social-link"
-                  key={i}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
