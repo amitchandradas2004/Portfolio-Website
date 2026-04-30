@@ -31,7 +31,10 @@ export default function Footer() {
       </div>
 
       <footer>
-        <div className="footer-logo">&lt;AMIT_CHANDRA_DAS /&gt;</div>
+        <a href="#">
+          {" "}
+          <div className="footer-logo">&lt;AMIT_CHANDRA_DAS /&gt;</div>
+        </a>
         <div className="footer-copy">© 2026 — Made with ❤️ &amp; React.js</div>
       </footer>
     </>

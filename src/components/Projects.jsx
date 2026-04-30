@@ -45,8 +45,8 @@ const projects = [
     title: "Portfolio Website",
     desc: "This very portfolio! Built with React.js, featuring dark glassmorphism design, neon aesthetics, smooth animations, and fully responsive layout.",
     stack: ["React.js", "CSS3", "Tailwind CSS", "DaisyUI"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/amitchandradas2004/Portfolio-Website",
+    live: "https://amitportfolio-five.vercel.app/",
   },
 ];
 
