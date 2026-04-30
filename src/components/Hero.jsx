@@ -84,13 +84,13 @@ export default function Hero() {
         <div className="hero-right fade-up d3">
           <div className="glass-card profile-card">
             <div className="status">
-              <span className="dot" />
+              <span className="dot"></span>
               Open to opportunities
             </div>
             <div className="profile-avatar">
-              <img src={AmitIcon} alt="" className="amiticon" />
+              <img src={AmitIcon} alt="Image of Amit Chandra Das" />
             </div>
-            <div className="profile-name">Amit Chandra Das</div>
+            <div className="text-2xl font-bold mb-1">Amit Chandra Das</div>
             <div className="profile-handle">// fresher full-stack dev</div>
 
             <div className="stat-row">
