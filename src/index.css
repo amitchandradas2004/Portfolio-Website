@@ -5,8 +5,7 @@
   margin: 0;
   padding: 0;
 }
-@import "tailwindcss";
-@plugin "daisyui";
+
 :root {
   --cyan: #00f5ff;
   --purple: #bf5fff;
@@ -68,6 +67,7 @@ body {
   cursor: none;
   text-transform: uppercase;
   transition: all 0.3s;
+  text-align: center;
 }
 .theme-toggle:hover {
   border-color: var(--cyan);
@@ -323,6 +323,10 @@ body {
 }
 .nav-links a:hover::after {
   width: 100%;
+}
+.drawer-info {
+  padding: 30px;
+  gap: 10px;
 }
 
 /* Pill badges */
@@ -996,9 +1000,13 @@ footer {
   .nav-links {
     display: none;
   }
+
   footer {
     flex-direction: column;
     gap: 0.6rem;
     text-align: center;
   }
 }
+
+@import "tailwindcss";
+@import "daisyui/daisyui.css";
