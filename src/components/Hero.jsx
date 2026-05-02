@@ -45,11 +45,11 @@ export default function Hero() {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 6rem 4rem 4rem;
+  padding: 6rem 1rem 1rem;
   gap: 3rem;
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
 }
   .fade-up {
@@ -74,9 +74,9 @@ export default function Hero() {
 }`}
       </style>
       <section style={{ position: "relative" }}>
-        <div className="hero flex-col md:flex-row">
+        <div className="hero flex-col md:flex-row container mx-auto">
           {/* LEFT */}
-          <div className="flex-1 w-full flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex-1 flex flex-col items-center text-center md:items-start md:text-left">
             {/* hero-tag */}
             <div
               className="
@@ -157,14 +157,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT */}
-          <div
-            className="
-              w-full max-w-[300px]
-              md:w-[300px] md:flex-none
-              lg:w-[320px]
-              fade-up d3
-            "
-          >
+          <div className="w-full md:w-80 lg:w-80 md:flex-none fade-up d3">
             <div className="glass-card profile-card rounded-xl overflow-hidden">
               <div className="status">
                 <span className="dot" />
