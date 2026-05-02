@@ -73,11 +73,11 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="project-links">
-                <a href={p.github} className="proj-link">
+              <div className="project-links ">
+                <a href={p.github} className="stack-tag-live">
                   GitHub →
                 </a>
-                <a href={p.live} className="proj-link">
+                <a href={p.live} className="stack-tag-live">
                   Live Demo →
                 </a>
               </div>
