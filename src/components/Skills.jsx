@@ -4,55 +4,79 @@ const skills = [
   {
     name: "HTML5",
     icon: "https://img.icons8.com/?size=96&id=20909&format=png",
+    link: "https://www.w3schools.com/Html/",
   },
   {
     name: "CSS3",
     icon: "https://img.icons8.com/?size=160&id=YjeKwnSQIBUq&format=png",
+    link: "https://www.w3schools.com/css/",
   },
   {
     name: "Tailwind CSS",
     icon: "https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png",
-  },
-  {
-    name: "DaisyUI",
-    icon: "https://img.daisyui.com/images/daisyui/mark-static.svg",
-  },
-  {
-    name: "JavaScript",
-    icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
-  },
-  {
-    name: "React.js",
-    icon: "https://cdn-icons-png.flaticon.com/128/3459/3459528.png",
-  },
-  {
-    name: "Next.js",
-    icon: "https://img.icons8.com/?size=96&id=MWiBjkuHeMVq&format=png",
-  },
-  {
-    name: "MongoDB",
-    icon: "https://img.icons8.com/?size=96&id=bosfpvRzNOG8&format=png",
-  },
-  {
-    name: "Node.js",
-    icon: "https://img.icons8.com/?size=96&id=54087&format=png",
-  },
-  {
-    name: "Express.js",
-    icon: "https://img.icons8.com/?size=96&id=PZQVBAxaueDJ&format=png",
+    link: "https://tailwindcss.com/",
   },
   {
     name: "Git",
     icon: "https://img.icons8.com/?size=96&id=20906&format=png",
+    link: "https://git-scm.com/",
   },
   {
     name: "GitHub",
     icon: "https://img.icons8.com/?size=96&id=AZOZNnY73haj&format=png",
+    link: "https://github.com/",
   },
+
   {
     name: "VS Code",
     icon: "https://img.icons8.com/?size=96&id=9OGIyU8hrxW5&format=png",
+    link: "https://code.visualstudio.com/",
   },
+  {
+    name: "DaisyUI",
+    icon: "https://img.daisyui.com/images/daisyui/mark-static.svg",
+    link: "https://daisyui.com/docs/install/",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+    link: "https://www.w3schools.com/js/",
+  },
+  {
+    name: "React.js",
+    icon: "https://cdn-icons-png.flaticon.com/128/3459/3459528.png",
+    link: "https://react.dev/",
+  },
+  {
+    name: "Next.js",
+    icon: "https://img.icons8.com/?size=96&id=MWiBjkuHeMVq&format=png",
+    link: "https://nextjs.org/",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://img.icons8.com/?size=96&id=bosfpvRzNOG8&format=png",
+    link: "https://www.mongodb.com/",
+  },
+  {
+    name: "Node.js",
+    icon: "https://img.icons8.com/?size=96&id=54087&format=png",
+    link: "https://nodejs.org/en",
+  },
+  // {
+  //   name: "Express.js",
+  //   icon: "https://img.icons8.com/?size=96&id=PZQVBAxaueDJ&format=png",
+  //   link: "https://expressjs.com/",
+  // },
+  // {
+  //   name: "PostgreSQL",
+  //   icon: "https://cdn-icons-png.flaticon.com/128/5968/5968342.png",
+  //   link: "https://www.postgresql.org/",
+  // },
+  // {
+  //   name: "JWT Auth",
+  //   icon: "https://img.icons8.com/?size=96&id=rHpveptSuwDz&format=png",
+  //   link: "https://jwt-auth.readthedocs.io/en/develop/",
+  // },
 ];
 
 const learningNow = ["TypeScript", "Express.js", "REST APIs", "Next.js"];
@@ -70,16 +94,21 @@ export default function Skills() {
 
         <div className="skills-grid">
           {skills.map((s, i) => (
-            <div
-              className="skill-item border border-gray-800 rounded-xl select-none profile-card-1"
-              key={i}
-            >
-              <div className="skill-icon flex justify-center">
-                <img src={s.icon} alt={s.name} className="w-10" />
+            <a href={s.link} target="_blank">
+              <div
+                className="skill-item border border-gray-800 rounded-xl select-none profile-card-1"
+                key={i}
+              >
+                <div className="skill-icon flex justify-center overflow-hidden">
+                  <img
+                    src={s.icon}
+                    alt={s.name}
+                    className="w-12  rounded-full"
+                  />
+                </div>
+                <div className="skill-name">{s.name}</div>
               </div>
-              <div className="skill-name">{s.name}</div>
-              <div className={`skill-accent`} />
-            </div>
+            </a>
           ))}
         </div>
 
