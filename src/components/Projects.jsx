@@ -9,6 +9,8 @@ const projects = [
     stack: ["React.js", "Node.js", "Tailwind CSS", "DaisyUI"],
     github: "https://github.com/amitchandradas2004/Keep-Keeper",
     live: "https://keen-keeper-ebon.vercel.app/",
+    image:
+      "https://i.ibb.co.com/7tTF6Vh9/Gemini-Generated-Image-5ky6mo5ky6mo5ky6.png",
   },
   {
     num: "02",
@@ -18,6 +20,8 @@ const projects = [
     stack: ["React.js", "JavaScript", "Tailwind CSS", "DaisyUI"],
     github: "https://github.com/amitchandradas2004/AI-Model-Hub-By-React",
     live: "https://ai-model-hub-by-react.vercel.app/",
+    image:
+      "https://i.ibb.co.com/tPP2j1Nr/Gemini-Generated-Image-ozjcwqozjcwqozjc.png",
   },
   {
     num: "03",
@@ -28,6 +32,8 @@ const projects = [
     github:
       "https://github.com/amitchandradas2004/English-Window-Vocabulary-FAQ-Explorer",
     live: "https://amitchandradas2004.github.io/English-Window-Vocabulary-FAQ-Explorer/",
+    image:
+      "https://i.ibb.co.com/4hG0v4G/Gemini-Generated-Image-dhxvpudhxvpudhxv.png",
   },
   {
     num: "04",
@@ -38,6 +44,8 @@ const projects = [
     github:
       "https://github.com/amitchandradas2004/Teamollo-Responsive-Web-Application",
     live: "https://amitchandradas2004.github.io/Teamollo-Responsive-Web-Application/",
+    image:
+      "https://i.ibb.co.com/v4ksz1Sd/Gemini-Generated-Image-eu7wqieu7wqieu7w.png",
   },
   {
     num: "05",
@@ -47,6 +55,8 @@ const projects = [
     stack: ["React.js", "CSS3", "Tailwind CSS", "DaisyUI"],
     github: "https://github.com/amitchandradas2004/Portfolio-Website",
     live: "https://amitchandradasportfolio.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=873&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -54,7 +64,9 @@ export default function Projects() {
   return (
     <section id="projects" style={{ position: "relative", zIndex: 1 }}>
       <div className="section-wrapper  fade-up d3">
-        <div className="section-label flex justify-center md:justify-start">// what I've built</div>
+        <div className="section-label flex justify-center md:justify-start">
+          // what I've built
+        </div>
         <h2 className="section-title text-center md:text-start">
           My <span className="grad-text-green">Projects</span>
         </h2>
@@ -68,6 +80,13 @@ export default function Projects() {
               <div className="project-num">{p.num}</div>
               <div className="project-tag">{p.tag}</div>
               <div className="project-title">{p.title}</div>
+              <div>
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="rounded-xl select-none"
+                />
+              </div>
               <div className="project-desc">{p.desc}</div>
               <div className="project-stack">
                 {p.stack.map((t, j) => (
