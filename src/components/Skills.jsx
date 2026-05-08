@@ -1,4 +1,3 @@
- 
 const skills = [
   {
     name: "HTML5",
@@ -37,18 +36,25 @@ const skills = [
     link: "https://daisyui.com/docs/install/",
   },
   {
+    name: "Hero UI",
+    icon: "https://heroui.com/icons/favicon.svg",
+    link: "https://heroui.com/",
+  },
+
+  {
     name: "JavaScript",
     icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
     link: "https://www.w3schools.com/js/",
   },
   {
     name: "React.js",
+    // icon: "https://react.dev/favicon-32x32.png",
     icon: "https://cdn-icons-png.flaticon.com/128/3459/3459528.png",
     link: "https://react.dev/",
   },
   {
     name: "Next.js",
-    icon: "https://img.icons8.com/?size=96&id=MWiBjkuHeMVq&format=png",
+    icon: "https://nextjs.org/favicon.ico?favicon.117ezoe8m31dk.ico",
     link: "https://nextjs.org/",
   },
   {
@@ -95,7 +101,7 @@ export default function Skills() {
           {skills.map((s, i) => (
             <a href={s.link} target="_blank">
               <div
-                className="skill-item border border-gray-800 rounded-xl select-none profile-card-1"
+                className="skill-item border border-gray-800 rounded-xl select-none profile-card-1 h-full items-center"
                 key={i}
               >
                 <div className="skill-icon flex justify-center overflow-hidden">
