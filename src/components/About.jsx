@@ -1,3 +1,4 @@
+import { Button } from "@heroui/react";
 import React from "react";
 
 const highlights = [
@@ -83,12 +84,23 @@ export default function About() {
             </div>
 
             <div className="my-10 flex flex-wrap gap-5 justify-center md:justify-start">
-              <a href="#contact" className="btn-primary">
-                Hire Me
-              </a>
-              <a href="/resume.pdf" className="btn-outline" download>
-                Download CV
-              </a>
+              <Button variant="primary">
+                <a
+                  href="#contact"
+                  className="btn-primary rounded-full w-30 text-black"
+                >
+                  Hire Me
+                </a>
+              </Button>
+              <Button variant="primary">
+                <a
+                  href="/resume.pdf"
+                  className="btn-outline rounded-full w-30 text-black"
+                  download
+                >
+                  Download CV
+                </a>
+              </Button>
             </div>
           </div>
 

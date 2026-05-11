@@ -1,3 +1,4 @@
+import { Button } from "@heroui/react";
 import React from "react";
 
 export default function Footer() {
@@ -25,15 +26,23 @@ export default function Footer() {
           I'm actively looking for my first role as a developer. Got a project
           or an opportunity? I'd love to hear from you!
         </p>
-        <a href="#contact" className="btn-primary">
-          Start a Conversation
-        </a>
+        <Button variant="primary">
+          {" "}
+          <a
+            href="#contact"
+            className="btn-primary rounded-full w-45 text-black font-medium"
+          >
+            Start a Conversation
+          </a>
+        </Button>
       </div>
 
       <footer className="fade-up d5 bg-gray-900">
-        <a href="#">
-          {" "}
-          <div className="footer-logo">&lt;AMIT_CHANDRA_DAS /&gt;</div>
+        <a href="#" className="">
+          <Button variant="ghost" className="w-50">
+            {" "}
+            <div className="footer-logo">&lt;AMIT_CHANDRA_DAS /&gt;</div>
+          </Button>
         </a>
         <div className="footer-copy">© 2026 — Made with ❤️ &amp; React.js</div>
       </footer>

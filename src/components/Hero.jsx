@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AmitImage from "../Assets/amit.png";
+import { Button } from "@heroui/react";
 
 const roles = [
   "Full-Stack Developer",
@@ -147,12 +148,22 @@ export default function Hero() {
                 fade-up d5
               "
             >
-              <a href="#projects" className="btn-primary">
-                View My Work
-              </a>
-              <a href="#contact" className="btn-outline">
-                Let's Talk
-              </a>
+              <Button variant="primary">
+                <a
+                  href="#projects"
+                  className="btn-primary rounded-full w-35 text-black"
+                >
+                  View My Work
+                </a>
+              </Button>
+              <Button>
+                <a
+                  href="#contact"
+                  className="btn-outline rounded-full w-30 text-black"
+                >
+                  Let's Talk
+                </a>
+              </Button>
             </div>
           </div>
 

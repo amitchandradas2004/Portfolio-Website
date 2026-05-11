@@ -101,7 +101,7 @@ export default function Skills() {
           {skills.map((s, i) => (
             <a href={s.link} target="_blank">
               <div
-                className="skill-item border border-gray-800 rounded-xl select-none profile-card-1 h-full items-center"
+                className="skill-item border border-gray-600 rounded-xl select-none h-full items-center"
                 key={i}
               >
                 <div className="skill-icon flex justify-center overflow-hidden">

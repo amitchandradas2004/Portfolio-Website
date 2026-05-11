@@ -1,3 +1,4 @@
+import { Button } from "@heroui/react";
 import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
@@ -161,7 +162,7 @@ export default function Navbar({ theme, toggleTheme }) {
               <span
                 key={i}
                 className={[
-                  "block w-[18px] h-0.5 rounded-sm transition-all duration-300",
+                  "block w-4.5 h-0.5 rounded-sm transition-all duration-300",
                   isDark ? "bg-white/90" : "bg-indigo-800",
                   i === 0 && menuOpen ? "translate-y-[7px] rotate-45" : "",
                   i === 1 && menuOpen ? "opacity-0 scale-x-0" : "",
@@ -197,7 +198,7 @@ export default function Navbar({ theme, toggleTheme }) {
       >
         <ul className="p-2 list-none flex flex-col items-center justify-center gap-2">
           {navLinks.map((link) => (
-            <li key={link.href} className="h-8 items-center flex">
+            <li key={link.href} className=" items-center flex w-40">
               <a
                 href={link.href}
                 onClick={() => {
@@ -205,7 +206,7 @@ export default function Navbar({ theme, toggleTheme }) {
                   setMenuOpen(false);
                 }}
                 className={[
-                  "flex w-full rounded-full text-center items-center",
+                  "flex w-full rounded-full text-center justify-center items-center h-8",
                   "text-xs font-bold tracking-[2px] uppercase",
                   "no-underline border transition-all duration-200",
                   activeLink === link.href
@@ -225,7 +226,7 @@ export default function Navbar({ theme, toggleTheme }) {
           {/* Divider */}
           <li
             className={[
-              "border-t pt-2",
+              "pt-2",
               isDark ? "border-white/8" : "border-white/40",
             ].join(" ")}
           >
@@ -235,8 +236,8 @@ export default function Navbar({ theme, toggleTheme }) {
                 setMenuOpen(false);
               }}
               className={[
-                "w-full flex items-center gap-2.5  rounded-xl sm:rounded-2xl",
-                "text-sm font-bold tracking-[2px] uppercase text-left",
+                "w-40 h-8 flex items-center gap-2.5 rounded-xl sm:rounded-2xl",
+                "text-sm font-bold tracking-[2px] uppercase  justify-center",
                 "bg-transparent border border-transparent cursor-pointer",
                 "transition-all duration-200",
                 isDark

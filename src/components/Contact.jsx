@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Button } from "@heroui/react";
 
 const EMAILJS_SERVICE_ID = "service_ilqj5v9";
 const EMAILJS_TEMPLATE_ID = "template_xa0g4oq";
@@ -121,14 +122,15 @@ export default function Contact() {
             </div>
 
             <div className="flex justify-center md:justify-start">
-              <button
+              <Button
                 type="submit"
-                className="btn-primary"
+                className="btn-primary rounded-full w-40 text-black font-medium"
                 style={{ alignSelf: "flex-start" }}
                 disabled={status === "sending"}
+                variant="primary"
               >
                 {buttonLabel}
-              </button>
+              </Button>
             </div>
           </form>
 
@@ -145,7 +147,7 @@ export default function Contact() {
               project idea, a collab, or just saying hello. My inbox is open!
             </p>
 
-            <div className="social-links" >
+            <div className="social-links">
               {socials.map((s, i) => (
                 <a
                   key={i}
