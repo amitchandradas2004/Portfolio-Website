@@ -407,39 +407,9 @@ body {
   margin-top: 0.15rem;
 }
 /* Marquee */
-.marquee-section {
-  position: relative;
-  z-index: 1;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-  overflow: hidden;
-}
 .marquee-track {
-  display: flex;
-  gap: 2.5rem;
   animation: marquee 18s linear infinite;
-  white-space: nowrap;
 }
-.marquee-item {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-.sep {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--cyan);
-  opacity: 0.35;
-}
-
 /* Skills grid */
 .skills-grid {
   display: grid;
@@ -884,4 +854,4 @@ footer {
 }
 @import "tailwindcss";
 @import "daisyui/daisyui.css";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
